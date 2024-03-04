@@ -53,7 +53,7 @@ public class Main extends Application {
 	private int head_raw = 0; // head of received bytes
 	private String pathDir = ""; // directory to save pictures
 	
-	private ImageView ivLatest = new ImageView(new Image("assets\\default.jpg"));
+	private ImageView ivLatest = new ImageView(new Image("assets/default.jpg"));
 	private TextField tfImage = new TextField();
 	private ArrayList<File> imageList = new ArrayList<>();
 	private int head_imagePathList = 0;
@@ -236,7 +236,7 @@ public class Main extends Application {
 		if (list.length > 0) {
 			Collections.sort(Arrays.asList(list));
 			//for (String s : list) System.out.println(s);
-			String path = pathDir + "\\"+list[list.length-1];
+			String path = pathDir + "/"+list[list.length-1];
 			System.out.println("Newest: "+ path);
 			imageList.add(new File(path));
 			System.out.println("head_imagePathList: "+head_imagePathList+", "+"imageList.size(): "+imageList.size());
@@ -255,7 +255,7 @@ public class Main extends Application {
 		Image img = new Image(file.toURI().toString());
 		boolean error = img.isError();
 		if (error) {
-			img = new Image("assets\\brokenImage.jpg");
+			img = new Image("assets/brokenImage.jpg");
 		}
 		ivLatest.setImage(img);
 		tfImage.setText(file.getName());
@@ -276,7 +276,7 @@ public class Main extends Application {
 
 		Date date = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd_HHmmss");
-		String fname = pathDir + "\\log" + format.format(date);
+		String fname = pathDir + "/log" + format.format(date);
 
 		// convert HEX array to BIN array
 
