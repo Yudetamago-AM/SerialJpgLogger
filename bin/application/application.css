@@ -1,0 +1,5 @@
+
+/* Improve visibility of selected port while disabled */
+.choice-box:disabled, .choise-box:disabled > * {
+  -fx-opacity: 1.0 ;
+}

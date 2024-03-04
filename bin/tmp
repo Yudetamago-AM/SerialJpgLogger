@@ -1,0 +1,9 @@
+module SerialJpgLoggerA {
+	requires javafx.controls;
+	requires javafx.fxml;
+	requires javafx.graphics;
+	//requires org.scijava.nativelib;
+	requires jssc;
+	requires org.apache.commons.codec;
+	exports application;
+}
