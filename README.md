@@ -17,9 +17,10 @@
 - 入力文字列の空白類を無視する。
 -	'0'-'9', 'a'-'f', 'A'-'F'（16進表記の記号）でない記号は’0’とみなす。
 -	直近64文字のうち空白類を除いた文字が全て’0’ならば画像ごとの区切りとみなす。
-  - つまり、画像データと画像データの間に64個以上の’0’が必要です。
+      - つまり、画像データと画像データの間に64個以上の’0’が必要です。
+    
 - 指定されたディレクトリ内に、"log[yyyymmdd]\_[hhmmss].jpg"（バイナリ）および"log[yyyymmdd]\_[hhmmss]_raw.hex"（テキストファイル）を出力する。ただし、[yyyymmdd]および[hhmmss]は受信日時を表す。
-  - 一秒間に複数枚の画像を受信することは今のところ想定していない
+     - 一秒間に複数枚の画像を受信することは今のところ想定していない
 
 ## 他のプラットフォーム(macOS等)で使う
 ### 方法1（要JDKインストール）
@@ -41,7 +42,7 @@
    - 使いたいプラットフォーム向けのビルド
 4. SerialJpgLogger_vX_Jar.zip（Xはバージョン）をダウンロード・解凍
 5. ```cd <SerialJpgLogger_vX_Jar.zipを解凍したディレクトリ>```
-6. ```<OpenJDKを解凍したディレクトリ>/jdk-21.0.2/bin/jlink --module-path "<OpenJDKを解凍したディレクトリ>/jmods" --module-path "<JavaFXを解凍したディレクトリ>/javafx-jmods-21.0.2" --add-modules java.base,java.desktop,jdk.unsupported,javafx.base,javafx.controls,javafx.graphics --output jre_min```
+6. ```<OpenJDKを解凍したディレクトリ>/jdk-21.0.2/bin/jlink --module-path "<OpenJDKを解凍したディレクトリ>/jdk-21.0.2/jmods" --module-path "<JavaFXを解凍したディレクトリ>/javafx-jmods-21.0.2" --add-modules java.base,java.desktop,jdk.unsupported,javafx.base,javafx.controls,javafx.graphics --output jre_min```
 7. ```echo "jre_min/bin/java.exe -jar sjl_vX.jar" > run.sh```
 8. ```chmod +x run.sh```
 9. ```./run.sh```で実行
